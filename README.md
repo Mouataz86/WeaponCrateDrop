@@ -1,80 +1,112 @@
-# Weapon Crate Drop Mod for GTA V Story Mode
+WeaponDrop (Developer Documentation)
 
-📦 **Version**: 1.0  
-🛠 **Author**: MO3IZO  
-🌐 **GitHub**: [https://github.com/Mouataz86/WeaponCrateDrop](https://github.com/Mouataz86/WeaponCrateDrop)
+Welcome to the developer documentation for WeaponDrop, a C# mod for Grand Theft Auto V that allows players to spawn collectible weapon crates.
 
-> ⚠️ **DO NOT USE THIS MOD ONLINE. OFFLINE STORY MODE ONLY. Using in GTA Online can result in bans.**
+This guide is intended for developers who wish to contribute to the project, or fork it for their own modifications. For end-user installation, please see the README.txt in the root directory.
 
----
+📑 Table of Contents
 
-## 📋 What is This Mod?
+Project Overview
 
-`WeaponDrop` is a lightweight mod for GTA V Story Mode that allows you to drop a weapon crate with a random weapon and ammo. Ideal for quick gear-ups or roleplaying. You can customize the crate model, weapon list, ammo range, and pickup key through the `WeaponCrateDrop.ini` file.
+Requirements
 
----
+Setup and Building
 
-## 🧩 Requirements
+Usage In-Game
 
-- GTA V (PC)
-- [ScriptHookV by Alexander Blade](http://www.dev-c.com/gtav/scripthookv/)
-- [ScriptHookVDotNet v3.7.0+ (Nightly Recommended)](https://github.com/scripthookvdotnet/scripthookvdotnet-nightly/releases)
+Contributing
 
----
+License
 
-## 📁 Installation (User Version)
+📦 Project Overview
 
-1. Create a `scripts` folder in your GTA V directory if it doesn’t exist.
-2. Drop these files into the `scripts` folder:
-   - `WeaponDrop.dll`
-   - `WeaponCrateDrop.ini`
-3. Launch GTA V (Story Mode).
-4. Press **F6** (or your configured key) to drop a weapon crate.
+WeaponDrop is built using the ScriptHookVDotNet3 (SHVDN3) API wrapper. It allows players to press a hotkey (default: F6) to drop a prop_box_wood05a crate in front of them. If the player approaches the crate, it is deleted and a random weapon is added to their inventory with a randomized amount of ammo.
 
----
+Language: C#Framework: .NET Framework 4.8Core API: ScriptHookVDotNet 3
 
-## ⚙ Configuration (`WeaponCrateDrop.ini`)
+🔧 Features Implemented
 
-```ini
-[General]
-DropKey=F6
-EnableNotifications=true
-CrateModel=prop_box_wood05a
-PickupDistance=2.5
-MinAmmo=30
-MaxAmmo=150
-MaxCrates=1
+Crate spawns in front of player using customizable model (default: prop_box_wood05a)
 
-[Weapons]
-Weapon1=SMG
-Weapon2=CarbineRifle
-Weapon3=CombatPistol
-Weapon4=Knife
-```
+One crate at a time enforcement
 
----
+Crate disappears if the player moves too far (10 meters)
 
-## ✨ Features
+Player cannot spawn crate if:
 
-- Drop 1 weapon crate at a time.
-- Crate disappears if you go too far.
-- Cannot spawn while:
-  - Driving
-  - Flying
-  - On boat
-  - Falling
-- Weapon + Ammo randomization.
-- Fully configurable.
+Driving
 
----
+Flying
 
-## 📃 License
+Falling
 
-MIT License – see `LICENSE` file.
+Swimming or boating
 
----
+Customizable ammo range and weapon list via INI
 
-## 🙌 Credits
+Crate pickup provides weapon + ammo
 
-- Developed by **MO3IZO**
-- Powered by ScriptHookVDotNet
+🧩 Requirements
+
+To build and develop this mod, you will need:
+
+Microsoft Visual Studio (2019 or newer recommended)
+
+.NET Framework 4.8 Developer Pack
+
+ScriptHookVDotNet 3
+
+Download SHVDN: https://github.com/crosire/scripthookvdotnet
+
+⚙️ Setup and Building
+
+1. Clone the Repository
+
+git clone <your-repo-url>
+cd WeaponDrop
+
+2. Open in Visual Studio
+
+Open the WeaponDrop.csproj file in Visual Studio.
+
+3. Restore Dependencies
+
+Ensure the reference to ScriptHookVDotNet3.dll is correct:
+
+Right-click References > Add Reference
+
+Browse to your ScriptHookVDotNet3 DLL location
+
+4. Build the Project
+
+Use Build > Build Solution to compile.Output DLL: bin/Debug/WeaponDrop.dll
+
+🎮 Usage In-Game
+
+Copy WeaponDrop.dll and WeaponCrateDrop.ini to your GTA V scripts/ folder.
+
+Launch GTA V (Story Mode only).
+
+Press the configured key (default: F6) to drop a weapon crate.
+
+Walk up to the crate to receive a randomized weapon and ammo.
+
+🤝 Contributing
+
+Contributions are welcome!
+
+Fork this repository
+
+Create a feature branch: git checkout -b feature/my-feature
+
+Commit your changes: git commit -am 'Add feature'
+
+Push your branch: git push origin feature/my-feature
+
+Create a Pull Request
+
+Ensure your code follows existing formatting and is clean and well-commented.
+
+📄 License
+
+This project is licensed under the MIT License.See the LICENSE file in the root directory for details.
