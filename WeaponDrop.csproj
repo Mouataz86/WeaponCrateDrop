@@ -31,8 +31,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="iFruitAddon2">
+      <HintPath>..\..\..\Games\Grand Theft Auto V\scripts\iFruitAddon2.dll</HintPath>
+    </Reference>
+    <Reference Include="LemonUI.SHVDN3">
+      <HintPath>..\..\..\Games\Grand Theft Auto V\scripts\LemonUI.SHVDN3.dll</HintPath>
+    </Reference>
     <Reference Include="ScriptHookVDotNet3">
-      <HintPath>H:\SteamLibrary\steamapps\common\Grand Theft Auto V\ScriptHookVDotNet3.dll</HintPath>
+      <HintPath>..\..\..\Games\Grand Theft Auto V\ScriptHookVDotNet3.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
